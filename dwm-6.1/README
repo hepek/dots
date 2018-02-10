@@ -49,3 +49,14 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+
+My tweaks
+---------
+
+Wallpaper is located in /home/milan/wallpaper.png
+
+make install installs dwm_title which sets the title to [kblayout] (audio level) datetime
+For this script to run you have to have pamixer and xkblayout-state installed on your system
+
+
