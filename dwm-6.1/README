@@ -59,4 +59,13 @@ Wallpaper is located in /home/milan/wallpaper.png
 make install installs dwm_title which sets the title to [kblayout] (audio level) datetime
 For this script to run you have to have pamixer and xkblayout-state installed on your system
 
+/etc/X11/xorg.conf.d/00-keyboard.conf:
+
+Section	"InputClass"
+	Identifier	"All Keyboards"
+	MatchIsKeyboard	"yes"
+	Option		"XkbLayout" "us,si,rs"
+	Option		"XkbOptions" "grp:alt_shift_toggle"
+EndSection
+
 
