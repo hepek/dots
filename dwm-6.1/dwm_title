@@ -1,0 +1,16 @@
+#!/bin/bash
+
+while true
+do
+	if [ "$(pamixer --get-mute)" = "true" ]
+	then
+		VOLUME='(M) '
+	else
+		VOLUME="($(pamixer --get-volume)) "
+	fi
+
+	LAYOUT="["$(xkblayout-state print %s)"]"
+
+	xsetroot -name "$LAYOUT $VOLUME $(date '+%a %Y-%m-%d %H:%M:%S')"
+	sleep 1
+done
