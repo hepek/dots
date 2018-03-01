@@ -62,3 +62,8 @@ nnoremap <leader>G :GFiles?<CR>
 nnoremap <leader>L :Buffers<CR>
 nnoremap <leader>D :Gdiff<CR>
 nnoremap <leader>S :Gstatus<CR>
+nnoremap Č :
+nnoremap Ч :
+
+set clipboard=unnamedplus
+set diffopt+=iwhite
