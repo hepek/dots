@@ -27,11 +27,15 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-scripts/Conque-GDB'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rking/ag.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
+
+let g:airline#extensions#tabline#enabled = 1
 
 set tabstop=4
 set shiftwidth=4
@@ -40,7 +44,6 @@ set exrc
 set secure
 set number
 syntax on
-colorscheme desert
 
 nnoremap <F5> :wall :make<CR>
 nnoremap <F8> :cn<CR>
