@@ -58,7 +58,7 @@ set tags=./tags;,tags;
 set mouse=a
 nnoremap <F1> :bd<CR>
 
-nnoremap gr :grep -r <cword> * 
+nnoremap gr :Ag <cword><CR>
 nnoremap <leader>F :Files<CR>
 nnoremap <leader>T :Tags<CR>
 nnoremap <leader>G :GFiles?<CR>

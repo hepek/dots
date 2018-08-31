@@ -2124,6 +2124,8 @@ int
 main(int argc, char *argv[])
 {
 	system("dwm_title &");
+	system("xrandr --output HDMI-0 --right-of DVI-D-0");
+	system("xrandr --output HDMI-0 --rotate left");
 	system("feh --bg-scale /home/milan/wallpaper.png &");
 
 	if (argc == 2 && !strcmp("-v", argv[1]))
