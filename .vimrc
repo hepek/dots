@@ -30,6 +30,8 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rking/ag.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
