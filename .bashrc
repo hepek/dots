@@ -10,7 +10,7 @@ parse_git_branch() {
 }
 
 alias ls='ls --color=auto'
-PS1="\[\033[2;93m\]$(date +%H:%M) \[\033[2;103;30m\][\u@\h \w]\[\033[0m\]\[\033[2;92m\]\$(parse_git_branch)\n$\[\033[0m\] "
+PS1="\[\033[2;93m\]\t \[\033[2;103;30m\][\u@\h \w]\[\033[0m\]\[\033[2;92m\]\$(parse_git_branch)\n$\[\033[0m\] "
 
 #source /usr/share/bash-completion/completions/git
 #source /usr/share/bash-completion/completions/docker
