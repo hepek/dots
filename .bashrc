@@ -26,3 +26,6 @@ alias smallpdf='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/scr
 
 PATH=$PATH:/home/milan/.cargo/bin/
 export TERM=xterm-256color
+
+export EDITOR=vim
+export PAGER=most

@@ -34,6 +34,7 @@ colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
 let g:airline#extensions#tabline#enabled = 1
+let g:ycm_server_python_interpreter='/usr/bin/python2'
 
 set tabstop=4
 set shiftwidth=4
