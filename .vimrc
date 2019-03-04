@@ -27,6 +27,7 @@ Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+Plugin 'ncm2/ncm2'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -40,10 +41,11 @@ let g:airline_theme='onehalfdark'
 let g:airline#extensions#tabline#enabled = 1
 let g:ycm_server_python_interpreter='/usr/bin/python2'
 
+" rustup component add rls rust-analysis rust-src
 if executable('rls')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
         \ 'whitelist': ['rust'],
         \ })
 endif
