@@ -21,6 +21,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'w0rp/ale'
 Plugin 'rking/ag.vim'
+Plugin 'jremmen/vim-ripgrep'
 
 Plugin 'rust-lang/rust.vim'
 Plugin 'prabirshrestha/async.vim'
@@ -50,6 +51,14 @@ if executable('rls')
         \ })
 endif
 
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+if executable('rg')
+    set grepprg=rg\ --no-heading\ --vimgrep
+    set grepformat=%f:%l:%c:%m
+endif
 
 
 set tabstop=4
@@ -80,8 +89,13 @@ nnoremap <leader>G :GFiles?<CR>
 nnoremap <leader>L :Buffers<CR>
 nnoremap <leader>D :Gdiff<CR>
 nnoremap <leader>S :Gstatus<CR>
+nnoremap <leader>h :LspHover<CR>
+nnoremap <F12> :LspDefinition<CR>
 nnoremap Č :
 nnoremap Ч :
 
 set clipboard=unnamedplus
 set diffopt+=iwhite
+
+set undodir=~/.vimdid
+set undofile
