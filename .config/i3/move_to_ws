@@ -1,0 +1,6 @@
+WS=$(i3-msg -t get_workspaces | jq 'map(.name)' | jq '.[]' | sed 's/"//g' | dmenu)
+
+if [ $? -eq 0 ]
+then
+    i3-msg move container to workspace "$WS"
+fi

@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set encoding=utf-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -37,6 +38,7 @@ colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
 let g:airline#extensions#tabline#enabled = 1
+let g:ycm_server_python_interpreter='/usr/bin/python2'
 
 if executable('rls')
     au User lsp_setup call lsp#register_server({
