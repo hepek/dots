@@ -18,9 +18,14 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'w0rp/ale'
 Plugin 'rking/ag.vim'
+
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer.git'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,6 +37,16 @@ colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
 let g:airline#extensions#tabline#enabled = 1
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
+
 
 set tabstop=4
 set shiftwidth=4
