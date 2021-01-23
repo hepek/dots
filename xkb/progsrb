@@ -16,9 +16,9 @@
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━┻━━━━━━┻━━━━━━┻━━━━━━┛
 
 default partial alphanumeric_keys
-xkb_symbols "milan" {
+xkb_symbols "progsrb" {
     include "us(basic)"
-    name[Group1] = "English (Milan)";
+    name[Group1] = "English (Serbocroatian)";
 
     key <AD11> {	[ bracketleft,	braceleft,  scaron,     Scaron	]	};
     key <AD12> {	[ bracketright,	braceright, dstroke,    Dstroke	]	};
