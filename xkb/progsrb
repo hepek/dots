@@ -1,31 +1,48 @@
 // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┲━━━━━━━━━┓
-// │     │     │     │     │     │     │     │     │     │     │     │     │     ┃Backspace┃
-// │     │ 1   │ 2   │ 3   │ 4   │ 5   │ 6   │ 7   │ 8   │ 9   │ 0   │ -   │ +   ┃ ⌫       ┃
+// │ ~   │ !   │ @   │ #   │ $ € │ %   │ ^   │ &   │ *   │ (   │ )   │ _   │ +   ┃Backspace┃
+// │ `   │ 1   │ 2   │ 3   │ 4   │ 5   │ 6   │ 7   │ 8   │ 9   │ 0   │ -   │ =   ┃ ⌫       ┃
 // ┢━━━━━┷━┱───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┴─┬───┺━┳━━━━━━━┫
-// ┃Tab    ┃ Q   │ W   │ E   │ R   │ T   │ Y   │ U   │ I   │ O   │ P   │ { Š │ } Đ ┃ ⏎     ┃
-// ┃ ↹     ┃ q   │ w   │ e   │ r   │ t   │ y   │ u   │ i   │ o   │ p   │ [ š │ ] đ ┃ Enter ┃
+// ┃Tab    ┃ Q   │ W   │ E   │ R   │ T   │ Y   │ U   │ I   │ O   │ P Π │ { Š │ } Đ ┃ ⏎     ┃
+// ┃ ↹     ┃ q   │ w   │ e   │ r   │ t   │ y   │ u   │ i   │ o   │ p π │ [ š │ ] đ ┃ Enter ┃
 // ┣━━━━━━━┻┱────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┺┓      ┃
-// ┃Caps    ┃ A   │ S   │ D   │ F   │ G   │ H   │ J   │ K   │ L   │ : Č │ " Ć │ | Ž ┃      ┃
-// ┃Lock  ⇬ ┃ a   │ s   │ d   │ f   │ g   │ h   │ j   │ k   │ l   │ ; č │ ' ć │ \ ž ┃      ┃
+// ┃Caps    ┃ A   │ S Σ │ D Δ │ F Φ │ G Γ │ H   │ J   │ K   │ L Λ │ : Č │ " Ć │ | Ž ┃      ┃
+// ┃Lock  ⇬ ┃ a α │ s σ │ d φ │ f φ │ g γ │ h   │ j   │ k   │ l λ │ ; č │ ' ć │ \ ž ┃      ┃
 // ┣━━━━━━┳━┹───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┬─┴───┲━┷━━━━━┻━━━━━━┫
 // ┃Shift ┃ >   │ Z   │ X   │ C   │ V   │ B   │ N   │ M   │ <   │ >   │ ?   ┃Shift         ┃
-// ┃ ⇧    ┃ <   │ z   │ x   │ c   │ v   │ b   │ n   │ m   │ ,   │ .   │ /   ┃ ⇧            ┃
+// ┃ ⇧    ┃ <   │ z   │ x   │ c   │ v   │ b β │ n ν │ m μ │ ,   │ .   │ /   ┃ ⇧            ┃
 // ┣━━━━━━┻┳━━━━┷━━┳━━┷━━━━┱┴─────┴─────┴─────┴─────┴─────┴────┲┷━━━━━╈━━━━━┻┳━━━━━━┳━━━━━━┫
 // ┃Ctrl   ┃ Fn    ┃Alt    ┃ ␣ Space                         ⍽ ┃AltGr ┃Multi ┃ Ctxt ┃ Ctrl ┃
 // ┃       ┃       ┃       ┃ ␣ Space                         ⍽ ┃      ┃      ┃ Menu ┃      ┃
 // ┗━━━━━━━┻━━━━━━━┻━━━━━━━┹───────────────────────────────────┺━━━━━━┻━━━━━━┻━━━━━━┻━━━━━━┛
+// ProgSrb - US layout with Serbian 
+// put in /usr/share/X11/xkb/symbols/progsrb
 
 default partial alphanumeric_keys
 xkb_symbols "progsrb" {
     include "us(basic)"
     name[Group1] = "English (Serbocroatian)";
 
-    key <AD11> {	[ bracketleft,	braceleft,  scaron,     Scaron	]	};
-    key <AD12> {	[ bracketright,	braceright, dstroke,    Dstroke	]	};
+    // Serbian
+    key <AD11> {	[ NoSymbol,	    NoSymbol,   scaron,      Scaron	]	};
+    key <AD12> {	[ NoSymbol,	    NoSymbol,   dstroke,     Dstroke]	};
 
-    key <AC10> {	[ semicolon,	colon,      ccaron,     Ccaron	]	};
-    key <AC11> {	[ apostrophe,	quotedbl,   cacute,     Cacute	]	};
-    key <BKSL> {	[ backslash,    bar,        zcaron,     Zcaron	]	};
+    key <AC10> {	[ NoSymbol,	    NoSymbol,   ccaron,      Ccaron	]	};
+    key <AC11> {	[ NoSymbol,	    NoSymbol,   cacute,      Cacute	]	};
+    key <BKSL> {	[ NoSymbol,     NoSymbol,   zcaron,      Zcaron	]	};
+
+    // misc
+    key <AE04> {    [ NoSymbol,     NoSymbol,   NoSymbol,    EuroSign]   };
+    key <AD10> {    [ NoSymbol,     NoSymbol,   Greek_pi,    Greek_PI]  };
+    key <AC01> {    [ NoSymbol,     NoSymbol,   Greek_alpha, NoSymbol]  };
+    key <AC02> {    [ NoSymbol,     NoSymbol,   Greek_sigma, Greek_SIGMA]  };
+    key <AC03> {    [ NoSymbol,     NoSymbol,   Greek_delta, Greek_DELTA]  };
+    key <AC04> {    [ NoSymbol,     NoSymbol,   Greek_phi,   Greek_PHI]  };
+    key <AC05> {    [ NoSymbol,     NoSymbol,   Greek_gamma, Greek_GAMMA]  };
+    key <AC09> {    [ NoSymbol,     NoSymbol,   Greek_lamda, Greek_LAMDA]  };
+
+    key <AB05> {    [ NoSymbol,     NoSymbol,   Greek_beta,  NoSymbol]  };
+    key <AB06> {    [ NoSymbol,     NoSymbol,   Greek_nu,    NoSymbol]  };
+    key <AB07> {    [ NoSymbol,     NoSymbol,   Greek_mu,    NoSymbol]  };
 
     include "level3(ralt_switch)"
 };
