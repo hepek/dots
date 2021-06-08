@@ -31,5 +31,13 @@ export EDITOR=vim
 export PAGER=less
 
 
-alias vim="nvim -u ~/.vimrc"
+#alias vim="nvim -u ~/.vimrc"
 alias date='date +"%Y-%m-%dT%H:%M:%S%Z"'
+function branch() {
+   git checkout $(git branch | sed 's/^[ \*]\+//g' | fzf --preview 'git log --no-merges {}')
+}
+
+# fzf stuff
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash
+

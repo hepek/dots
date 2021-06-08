@@ -9,29 +9,26 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" File formats
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'b4b4r07/vim-hcl'
+" misc
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'ekalinin/Dockerfile.vim'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} -- edit html
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-scripts/Conque-GDB' -- pretty boring
+"Ale - Async Lint Engine - provides linting while writing code using lang srv
 Plugin 'w0rp/ale'
-Plugin 'rking/ag.vim'
-Plugin 'jremmen/vim-ripgrep'
 
 Plugin 'rust-lang/rust.vim'
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/vim-lsp'
-"Plugin 'prabirshrestha/asyncomplete.vim'
-"Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'ncm2/ncm2'
-Plugin 'rhysd/git-messenger.vim'
-Plugin 'andreypopp/vim-colors-plain'
-Plugin 'neoclide/coc.nvim', {'pinned': 1}
-Plugin 'jacoborus/tender.vim'
+" tabnine - ml completion - works pretty fast
+Plugin 'codota/tabnine-vim'
+Plugin 'wellle/context.vim'
+"Plugin 'airblade/vim-rooter'
 
 
 " All of your Plugins must be added before the following line
@@ -87,7 +84,7 @@ set tags=./tags;,tags;
 set mouse=a
 nnoremap <F1> :bd<CR>
 
-nnoremap gr :Ag <cword><CR>
+nnoremap gr :Rg <cword><CR>
 nnoremap <leader>F :Files<CR>
 nnoremap <leader>T :Tags<CR>
 nnoremap <leader>G :GFiles?<CR>
@@ -95,11 +92,22 @@ nnoremap <leader>L :Buffers<CR>
 nnoremap <leader>D :Gdiff<CR>
 nnoremap <leader>S :Gstatus<CR>
 nnoremap <leader>h :LspHover<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>g :GFiles?<CR>
+nnoremap <leader>l :Buffers<CR>
+nnoremap <leader>m :Marks<CR>
+nnoremap <leader>d :Gdiff<CR>
+nnoremap <leader>s :Gstatus<CR>
+nnoremap <leader>h :LspHover<CR>
+nnoremap <leader>r :Rg<CR>
+nnoremap <leader>R :Rg <cword><CR>
 nnoremap <leader>z :put =strftime('%FT%T')<CR>
 nnoremap <F12> :LspDefinition<CR>
 nnoremap <leader>h :nohl<CR>
 nnoremap Č :
 nnoremap Ч :
+
 
 set diffopt+=iwhite
 
@@ -211,4 +219,7 @@ map ć '
 map Ć "
 map ž \\
 map Ž '|'
+
+set timeoutlen=700
+
 
