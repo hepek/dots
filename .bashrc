@@ -24,7 +24,7 @@ source /usr/share/bash-completion/completions/git
 alias cal='cal -m'
 alias smallpdf='gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=smaller.pdf'
 
-PATH=$PATH:/home/milan/.cargo/bin/
+PATH=$PATH:/home/milan/.cargo/bin/:/home/milan/.local/bin/:/home/milan/.nix-profile/bin
 export TERM=xterm-256color
 
 export EDITOR=vim
@@ -40,4 +40,14 @@ function branch() {
 # fzf stuff
 source /usr/share/fzf/completion.bash
 source /usr/share/fzf/key-bindings.bash
+
+alias boostoff='echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost'
+alias booston='echo 1 | sudo tee /sys/devices/system/cpu/cpufreq/boost'
+alias csserver='/home/milan/.steam/root/steamapps/common/Counter-Strike\ Global\ Offensive/game/bin/linuxsteamrt64/cs2 -dedicated -usercon +game_type 0 +game_mode 1 +map de_inferno -dev'
+
+function imlabel() {
+    magick "$1" -resize 50% -background Khaki -pointsize 30 label:"$2" +swap -gravity Center -append $(printf %05d.jpg $3)
+}
+
+alias wchromium='chromium --ozone-platform=wayland'
 
