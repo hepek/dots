@@ -50,4 +50,13 @@ function imlabel() {
 }
 
 alias wchromium='chromium --ozone-platform=wayland'
+function windowname() {
+    echo -e "\e]2;$1"
+}
+
+function windowname_dialog() {
+    dialog --inputbox "Set window name" 10 40 2> /tmp/windowname.txt && windowname "$(cat /tmp/windowname.txt)" && clear || clear
+}
+
+
 
